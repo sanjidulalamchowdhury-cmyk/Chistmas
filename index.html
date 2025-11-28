@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chistmas.store | Top Ranked Holiday Products & Gift Guides</title>
+    <meta name="description" content="Stop searching Amazon for hours. Discover curated top-ranked 'chistmas' products, decorations, and gifts. Expert holiday buying guides and AI-powered insights." />
+    <meta name="keywords" content="chistmas, christmas buy, christmas sale, santa workshop digital decoration, holiday hairstyles, christmas gift ideas" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chistmas.store | Top Ranked Holiday Products" />
+    <meta property="og:description" content="Curated top-ranked Amazon Christmas products with AI-powered insights. The ultimate destination for 'chistmas' shopping." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chistmas.store" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              christmas: {
+                red: '#D42426',
+                green: '#165B33',
+                gold: '#F8B229',
+                cream: '#F6F6F6',
+                dark: '#1A1A1A'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F6F6F6;
+        scroll-behavior: smooth;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Merriweather', serif;
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm transition-colors duration-300" id="mainHeader">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="#" class="flex-shrink-0 flex items-center gap-2 group">
+            <div class="w-10 h-10 bg-christmas-red rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:bg-christmas-green transition-colors">
+              C
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif font-bold text-xl tracking-tight text-christmas-dark">
+                Chistmas.store
+              </span>
+              <span class="text-xs text-christmas-green font-semibold uppercase tracking-wider">
+                Top Ranked Amazon Finds
+              </span>
+            </div>
+          </a>
+
+          <!-- Search Bar -->
+          <div class="hidden md:flex flex-1 max-w-2xl mx-8 relative group">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400" id="searchIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="searchInput"
+              class="block w-full pl-12 pr-28 py-3 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-md"
+              placeholder="Search chistmas products..."
+            />
+            <!-- AI Toggle -->
+            <div class="absolute inset-y-0 right-2 flex items-center">
+              <button
+                id="aiToggleBtn"
+                class="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all duration-300"
+                aria-pressed="false"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                </svg>
+                AI Mode
+              </button>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-8">
+            <a href="#products" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">Products</a>
+            <a href="#blog" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">Chistmas Blog</a>
+            <a href="#about" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">About</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section class="relative bg-christmas-red overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/xmasbg/1920/600" alt="Christmas Background" class="w-full h-full object-cover opacity-20 mix-blend-multiply">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 drop-shadow-md">
+            The "Chistmas" Store
+          </h1>
+          <p class="text-xl text-christmas-cream max-w-2xl mx-auto mb-10 font-light">
+            Don't spend hours on Amazon. We've ranked the absolute best holiday products for instant buying.
+            <span id="heroAiText" class="hidden mt-2 font-semibold text-christmas-gold animate-pulse">✨ AI Shopping Assistant Active</span>
+          </p>
+          <div class="flex justify-center gap-4">
+             <a href="#products" class="bg-white text-christmas-red px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors">
+               Shop Top Ranked
+             </a>
+             <a href="#blog" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-christmas-red transition-colors">
+               Read Blog
+             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Info Bar -->
+      <div class="bg-white border-b border-gray-200">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <span class="text-sm text-gray-500">
+              Showing top-ranked results for <strong id="currentSearchTerm">"chistmas best buys"</strong>
+            </span>
+            <div class="flex gap-2">
+               <span class="text-xs font-bold px-2 py-1 bg-gray-100 text-gray-600 rounded">Sort: Rank (High to Low)</span>
+            </div>
+         </div>
+      </div>
+
+      <!-- Products Grid -->
+      <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+           
+           <!-- Product 1 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Santa Workshop Digital Decoration on USB" data-tags="digital decoration, projection, santa, usb">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/santa/500/500" alt="Santa Workshop Digital Decoration on USB" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 Ranked</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(1240 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Santa Workshop Digital Decoration on USB</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">1080p HD Video Files in .MP4 Format. Horizontal and Vertical Orientations Included. Transform your window into Santa's workshop instantly. A top "chistmas" decoration choice.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$39.99</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+
+           <!-- Product 2 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Chistmas Holiday Hairstyle Kit" data-tags="hair, beauty, holiday style, girls">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/hair/500/500" alt="Chistmas Holiday Hairstyle Kit" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#2 Ranked</div>
+               <div class="absolute top-2 right-2 bg-christmas-green text-white text-xs font-bold px-2 py-1 rounded shadow">Best Deal</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(890 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Chistmas Holiday Hairstyle Kit</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Create the perfect Chistmas / Holiday Hairstyles! Includes ribbons for braided hairstyles, glitter, and easy guides for girls. As seen on Chikas Chic.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$15.49</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+
+           <!-- Product 3 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Select Comfort Holiday Tee (Pink/Navy)" data-tags="apparel, t-shirt, clothing, family">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/tee/500/500" alt="Select Comfort Holiday Tee" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#4 Ranked</div>
+               <div class="absolute top-2 right-2 bg-christmas-green text-white text-xs font-bold px-2 py-1 rounded shadow">Best Deal</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(3500 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Select Comfort Holiday Tee (Pink/Navy)</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Available in Select Pink, Select Navy, Light Steel, and White. High quality cotton perfect for Christmas morning photos.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$22.00</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+
+           <!-- Product 4 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="4K Smart LED Christmas Tree Lights" data-tags="lights, smart home, tree, decoration">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/lights/500/500" alt="4K Smart LED Christmas Tree Lights" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#3 Ranked</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★☆☆ <span class="text-xs text-gray-400 ml-1">(5600 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">4K Smart LED Christmas Tree Lights</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">App-controlled smart lights. Map your tree in 3D and create stunning light shows. Works with Alexa and Google Home.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$89.99</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+
+           <!-- Product 5 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Premium Artificial Spruce Tree (7.5ft)" data-tags="tree, artificial tree, home decor">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/tree/500/500" alt="Premium Artificial Spruce Tree" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#5 Ranked</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(8900 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Premium Artificial Spruce Tree (7.5ft)</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Feel Real branch tip technology for remarkable realism. Pre-lit with 750 white lights. Easy assembly for a hassle-free chistmas.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$199.99</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+
+           <!-- Product 6 -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Gourmet Holiday Gift Basket" data-tags="food, gift basket, chocolate">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="https://picsum.photos/seed/basket/500/500" alt="Gourmet Holiday Gift Basket" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#8 Ranked</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(450 reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Gourmet Holiday Gift Basket</h2>
+                <div class="flex-1 product-desc-container">
+                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">A selection of fine chocolates, cheeses, and crackers. The perfect last-minute gift that looks thoughtful and expensive.</p>
+                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$49.95</span>
+                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    Ask AI why this is great
+                </button>
+             </div>
+           </article>
+           
+         </div>
+         
+         <div id="noResults" class="hidden text-center py-20">
+            <p class="text-gray-500 text-lg">No "chistmas" products found matching your search.</p>
+            <button id="resetSearchBtn" class="mt-4 text-christmas-red hover:underline">View all top products</button>
+         </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="py-16 bg-christmas-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">
+              Holiday Guides & "Chistmas" Hacks
+            </h2>
+            <p class="max-w-2xl mx-auto text-gray-600">
+              Expert advice on how to make your holiday season magical, tailored for smart shoppers who hate wasting time.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+              <img src="https://picsum.photos/seed/blog1/800/600" alt="Why Everyone is Googling 'Chistmas' This Year" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <div class="flex items-center text-xs text-gray-500 mb-2">
+                  <span>Oct 12, 2025</span>
+                  <span class="mx-2">•</span>
+                  <span class="text-christmas-red font-medium">Buying Guide</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">Why Everyone is Googling "Chistmas" This Year</h3>
+                <p class="text-gray-600 mb-4 text-sm">We analyze the trend of the missing "r" and why smart shoppers are finding better deals by looking for common misspellings.</p>
+                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
+              </div>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+              <img src="https://picsum.photos/seed/blog2/800/600" alt="Top 5 Digital Decorations for 2025" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <div class="flex items-center text-xs text-gray-500 mb-2">
+                  <span>Nov 01, 2025</span>
+                  <span class="mx-2">•</span>
+                  <span class="text-christmas-red font-medium">Buying Guide</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">Top 5 Digital Decorations for 2025</h3>
+                <p class="text-gray-600 mb-4 text-sm">From Santa's Workshop to Winter Wonderlands, see which USB digital decorations are taking over the neighborhood windows.</p>
+                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
+              </div>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+              <img src="https://picsum.photos/seed/blog3/800/600" alt="The Ultimate Guide to Holiday Braids" class="w-full h-48 object-cover">
+              <div class="p-6">
+                <div class="flex items-center text-xs text-gray-500 mb-2">
+                  <span>Nov 15, 2025</span>
+                  <span class="mx-2">•</span>
+                  <span class="text-christmas-red font-medium">Beauty</span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">The Ultimate Guide to Holiday Braids</h3>
+                <p class="text-gray-600 mb-4 text-sm">Based on the popular "Chikas Chic" tutorials, we break down the easiest festive hairstyles for the holiday party season.</p>
+                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-christmas-dark text-white py-12" id="about">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+         <div>
+           <h4 class="text-lg font-serif font-bold mb-4">Chistmas.store</h4>
+           <p class="text-gray-400 text-sm">
+             The number one destination for finding top-ranked Amazon products without the hassle. 
+             Optimized for the busy shopper.
+           </p>
+         </div>
+         <div>
+           <h4 class="text-lg font-serif font-bold mb-4">Quick Links</h4>
+           <ul class="space-y-2 text-sm text-gray-400">
+             <li><a href="#" class="hover:text-christmas-gold">Top 100 Gifts</a></li>
+             <li><a href="#" class="hover:text-christmas-gold">Digital Decorations</a></li>
+             <li><a href="#" class="hover:text-christmas-gold">Holiday Hairstyles</a></li>
+             <li><a href="#" class="hover:text-christmas-gold">Contact Us</a></li>
+           </ul>
+         </div>
+         <div>
+           <h4 class="text-lg font-serif font-bold mb-4">SEO Tags</h4>
+           <div class="flex flex-wrap gap-2">
+               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#chistmas</span>
+               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#christmas buy</span>
+               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#santa workshop</span>
+               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#christmas gift</span>
+               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#gift ideas</span>
+           </div>
+         </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        © 2025 Chistmas.store. All rights reserved. Not affiliated with Amazon.
+      </div>
+    </footer>
+
+    <!-- App Logic -->
+    <script type="module">
+        import { GoogleGenAI } from "@google/genai";
+
+        // --- Configuration ---
+        // Using environment variable as required by instruction. 
+        // Note: In a pure static file, this usually requires a build step/bundler to replace process.env.
+        // If served raw without build, this line needs a hardcoded key or a mechanism to inject it.
+        const apiKey = process.env.API_KEY || ''; 
+        const ai = new GoogleGenAI({ apiKey });
+
+        // --- State ---
+        let aiMode = false;
+
+        // --- Elements ---
+        const searchInput = document.getElementById('searchInput');
+        const productItems = document.querySelectorAll('.product-item');
+        const noResults = document.getElementById('noResults');
+        const currentSearchTerm = document.getElementById('currentSearchTerm');
+        const resetSearchBtn = document.getElementById('resetSearchBtn');
+        const aiToggleBtn = document.getElementById('aiToggleBtn');
+        const searchIcon = document.getElementById('searchIcon');
+        const heroAiText = document.getElementById('heroAiText');
+
+        // --- Search Logic ---
+        function performSearch(term) {
+            term = term.toLowerCase();
+            let count = 0;
+            productItems.forEach(item => {
+                const title = item.getAttribute('data-title').toLowerCase();
+                const tags = item.getAttribute('data-tags').toLowerCase();
+                if (title.includes(term) || tags.includes(term)) {
+                    item.classList.remove('hidden');
+                    count++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            if (count === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            if (term) {
+                currentSearchTerm.innerText = `"${term}"`;
+            } else {
+                currentSearchTerm.innerText = '"chistmas best buys"';
+            }
+        }
+
+        searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+        resetSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            performSearch('');
+        });
+
+        // --- AI Mode Logic ---
+        aiToggleBtn.addEventListener('click', () => {
+            aiMode = !aiMode;
+            
+            // Toggle UI styles
+            if (aiMode) {
+                aiToggleBtn.classList.remove('bg-gray-100', 'text-gray-600');
+                aiToggleBtn.classList.add('bg-purple-100', 'text-purple-700');
+                aiToggleBtn.setAttribute('aria-pressed', 'true');
+                
+                searchInput.classList.remove('focus:ring-blue-200', 'focus:border-blue-500');
+                searchInput.classList.add('border-purple-300', 'focus:border-purple-500', 'focus:ring-purple-200');
+                searchInput.placeholder = "Ask AI for the best Christmas gift...";
+                
+                searchIcon.classList.remove('text-gray-400');
+                searchIcon.classList.add('text-purple-600');
+                
+                heroAiText.classList.remove('hidden');
+                
+                // Auto trigger AI on visible items
+                productItems.forEach(item => {
+                    if (!item.classList.contains('hidden')) {
+                        const btn = item.querySelector('.ai-ask-btn');
+                        const responseBox = item.querySelector('.ai-response-box');
+                        if (responseBox.innerText === '') {
+                             triggerAiInsight(item);
+                        }
+                    }
+                });
+
+            } else {
+                aiToggleBtn.classList.remove('bg-purple-100', 'text-purple-700');
+                aiToggleBtn.classList.add('bg-gray-100', 'text-gray-600');
+                aiToggleBtn.setAttribute('aria-pressed', 'false');
+                
+                searchInput.classList.add('focus:ring-blue-200', 'focus:border-blue-500');
+                searchInput.classList.remove('border-purple-300', 'focus:border-purple-500', 'focus:ring-purple-200');
+                searchInput.placeholder = "Search chistmas products...";
+                
+                searchIcon.classList.add('text-gray-400');
+                searchIcon.classList.remove('text-purple-600');
+                
+                heroAiText.classList.add('hidden');
+            }
+        });
+
+        // --- Gemini API Logic ---
+        async function triggerAiInsight(productElement) {
+            const title = productElement.getAttribute('data-title');
+            const tags = productElement.getAttribute('data-tags');
+            const responseBox = productElement.querySelector('.ai-response-box');
+            const staticDesc = productElement.querySelector('.product-static-desc');
+            const askBtn = productElement.querySelector('.ai-ask-btn');
+
+            // Hide static desc and show loader
+            staticDesc.classList.add('hidden');
+            responseBox.classList.remove('hidden');
+            askBtn.classList.add('hidden'); // Hide button while loading or done
+            
+            responseBox.innerHTML = `
+                <div class="flex items-center gap-1 mb-1">
+                    <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
+                    <span class="text-[10px] font-bold text-purple-700 uppercase">AI Insight</span>
+                </div>
+                <div class="space-y-1 animate-pulse">
+                   <div class="h-2 bg-purple-200 rounded w-full"></div>
+                   <div class="h-2 bg-purple-200 rounded w-2/3"></div>
+                 </div>
+            `;
+
+            if (!apiKey) {
+                responseBox.innerHTML += `<p class="text-xs text-red-500 mt-2">API Key missing. Cannot generate insight.</p>`;
+                return;
+            }
+
+            try {
+                const response = await ai.models.generateContent({
+                  model: 'gemini-2.5-flash',
+                  contents: `Write a persuasive, SEO-optimized short paragraph (max 40 words) explaining why "${title}" (tags: ${tags}) is a must-have item for Christmas 2025. Focus on the value proposition.`,
+                });
+                
+                const text = response.text || "Discover the magic of this product.";
+                
+                responseBox.innerHTML = `
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
+                        <span class="text-[10px] font-bold text-purple-700 uppercase">AI Insight</span>
+                    </div>
+                    <p class="text-sm text-purple-900 leading-snug">${text}</p>
+                `;
+
+            } catch (error) {
+                console.error(error);
+                responseBox.innerHTML = `<p class="text-sm text-gray-500">Could not load AI insight.</p>`;
+                staticDesc.classList.remove('hidden'); // Revert
+                responseBox.classList.add('hidden');
+            }
+        }
+
+        // Add listeners to all "Ask AI" buttons
+        document.querySelectorAll('.ai-ask-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const productEl = e.target.closest('.product-item');
+                triggerAiInsight(productEl);
+            });
+        });
+
+    </script>
+  </body>
+</html>
