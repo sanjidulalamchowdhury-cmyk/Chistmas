@@ -3,15 +3,67 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chistmas.store | Top Ranked Holiday Products & Gift Guides</title>
-    <meta name="description" content="Stop searching Amazon for hours. Discover curated top-ranked 'chistmas' products, decorations, and gifts. Expert holiday buying guides and AI-powered insights." />
-    <meta name="keywords" content="chistmas, christmas buy, christmas sale, santa workshop digital decoration, holiday hairstyles, christmas gift ideas" />
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Chistmas.store | Top Ranked Holiday Products" />
-    <meta property="og:description" content="Curated top-ranked Amazon Christmas products with AI-powered insights. The ultimate destination for 'chistmas' shopping." />
+    <title>Chistmas.store | Bluey Advent Calendar 2025 & Top STEM Holiday Gifts</title>
+    <meta name="description" content="Find the best price for Bluey Advent Calendar 2025, National Geographic Gemstone Kits, and Galaxy Moon Lamps. Top ranked 'chistmas' gifts and STEM toys." />
+    <meta name="keywords" content="chistmas, bluey advent calendar 2025 sale, national geographic gemstone advent calendar, moon lamp galaxy light, crayola art case for kids, dinosaur advent calendar" />
+    <link rel="canonical" href="https://chistmas.store/" />
+    <meta property="og:title" content="Top Ranked Holiday Finds 2025 - Chistmas.store" />
+    <meta property="og:description" content="Shop the viral Bluey Advent Calendar and National Geographic Science Kits. Expert curated holiday deals." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chistmas.store" />
+    <meta property="og:image" content="images/bluey_advent.jpg" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://chistmas.store/",
+          "name": "Chistmas.store",
+          "description": "Curated top-ranked holiday finds and digital decorations.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://chistmas.store/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "Product",
+              "position": 1,
+              "name": "Bluey Advent Calendar Pack",
+              "description": "24 Days of Surprises, Kids 2025 Advent Calendar w/Accessories.",
+              "image": "https://chistmas.store/images/bluey_advent.jpg",
+              "offers": {
+                "@type": "Offer",
+                "price": "24.99",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://amzn.to/4pvkLCI"
+              }
+            },
+            {
+              "@type": "Product",
+              "position": 2,
+              "name": "NATIONAL GEOGRAPHIC Gemstone Advent Calendar",
+              "description": "2025 Christmas Countdown Calendar with 24 Gems.",
+              "image": "https://chistmas.store/images/gemstone_advent.jpg",
+              "offers": {
+                "@type": "Offer",
+                "price": "20.49",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://amzn.to/4okhR2L"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -46,398 +98,405 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #F6F6F6;
-        scroll-behavior: smooth;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Merriweather', serif;
-      }
+      body { font-family: 'Inter', sans-serif; background-color: #F6F6F6; scroll-behavior: smooth; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
+      /* Hide scrollbar for modal content but allow scroll */
+      .modal-content::-webkit-scrollbar { width: 8px; }
+      .modal-content::-webkit-scrollbar-track { background: #f1f1f1; }
+      .modal-content::-webkit-scrollbar-thumb { background: #D42426; border-radius: 4px; }
     </style>
     <script type="importmap">
-{
-  "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
+    {
+      "imports": {
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+      }
+    }
+    </script>
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen relative">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm transition-colors duration-300" id="mainHeader">
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm transition-colors duration-300" id="mainHeader">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
-          <!-- Logo -->
-          <a href="#" class="flex-shrink-0 flex items-center gap-2 group">
-            <div class="w-10 h-10 bg-christmas-red rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:bg-christmas-green transition-colors">
-              C
-            </div>
+          <a href="/" class="flex-shrink-0 flex items-center gap-2 group">
+            <div class="w-10 h-10 bg-christmas-red rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:bg-christmas-green transition-colors">C</div>
             <div class="flex flex-col">
-              <span class="font-serif font-bold text-xl tracking-tight text-christmas-dark">
-                Chistmas.store
-              </span>
-              <span class="text-xs text-christmas-green font-semibold uppercase tracking-wider">
-                Top Ranked Amazon Finds
-              </span>
+              <span class="font-serif font-bold text-xl tracking-tight text-christmas-dark">Chistmas.store</span>
+              <span class="text-xs text-christmas-green font-semibold uppercase tracking-wider">Top Ranked Finds</span>
             </div>
           </a>
-
-          <!-- Search Bar -->
           <div class="hidden md:flex flex-1 max-w-2xl mx-8 relative group">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400" id="searchIcon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </div>
-            <input
-              type="text"
-              id="searchInput"
-              class="block w-full pl-12 pr-28 py-3 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-md"
-              placeholder="Search chistmas products..."
-            />
-            <!-- AI Toggle -->
+            <input type="text" id="searchInput" class="block w-full pl-12 pr-28 py-3 border border-gray-300 rounded-full leading-5 bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-md" placeholder="Search chistmas products..." />
             <div class="absolute inset-y-0 right-2 flex items-center">
-              <button
-                id="aiToggleBtn"
-                class="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all duration-300"
-                aria-pressed="false"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                </svg>
+              <button id="aiToggleBtn" class="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
                 AI Mode
               </button>
             </div>
           </div>
-
-          <!-- Navigation -->
-          <nav class="hidden md:flex space-x-8">
-            <a href="#products" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">Products</a>
-            <a href="#blog" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">Chistmas Blog</a>
-            <a href="#about" class="text-gray-600 hover:text-christmas-red font-medium transition-colors">About</a>
-          </nav>
         </div>
       </div>
     </header>
 
     <main class="flex-grow">
-      <!-- Hero Section -->
+      <!-- Hero -->
       <section class="relative bg-christmas-red overflow-hidden">
         <div class="absolute inset-0">
-            <img src="https://picsum.photos/seed/xmasbg/1920/600" alt="Christmas Background" class="w-full h-full object-cover opacity-20 mix-blend-multiply">
+            <!-- Ensure you have a background image named hero_bg.jpg or change this -->
+            <div class="w-full h-full bg-gradient-to-r from-red-700 to-red-900 opacity-90"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 drop-shadow-md">
-            The "Chistmas" Store
-          </h1>
+          <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 drop-shadow-md">The "Chistmas" Store</h1>
           <p class="text-xl text-christmas-cream max-w-2xl mx-auto mb-10 font-light">
-            Don't spend hours on Amazon. We've ranked the absolute best holiday products for instant buying.
+            We found the <strong>best Christmas gifts under $50</strong> and <strong>viral Bluey toys</strong>. Ranked #1 for holiday savings.
             <span id="heroAiText" class="hidden mt-2 font-semibold text-christmas-gold animate-pulse">✨ AI Shopping Assistant Active</span>
           </p>
           <div class="flex justify-center gap-4">
-             <a href="#products" class="bg-white text-christmas-red px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors">
-               Shop Top Ranked
-             </a>
-             <a href="#blog" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-christmas-red transition-colors">
-               Read Blog
-             </a>
+             <a href="#products" class="bg-white text-christmas-red px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition-colors">Shop Now</a>
           </div>
         </div>
       </section>
-
-      <!-- Info Bar -->
-      <div class="bg-white border-b border-gray-200">
-         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <span class="text-sm text-gray-500">
-              Showing top-ranked results for <strong id="currentSearchTerm">"chistmas best buys"</strong>
-            </span>
-            <div class="flex gap-2">
-               <span class="text-xs font-bold px-2 py-1 bg-gray-100 text-gray-600 rounded">Sort: Rank (High to Low)</span>
-            </div>
-         </div>
-      </div>
 
       <!-- Products Grid -->
       <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
            
-           <!-- Product 1 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Santa Workshop Digital Decoration on USB" data-tags="digital decoration, projection, santa, usb">
+           <!-- Product 1: Bluey -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Bluey Advent Calendar Pack Toys" data-tags="bluey, advent calendar, kids, stickers, christmas tree">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/santa/500/500" alt="Santa Workshop Digital Decoration on USB" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 Ranked</div>
+               <img src="images/bluey_advent.jpg" alt="Bluey Advent Calendar Pack Toys for Girls and Boys" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 Best Seller</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(1240 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Santa Workshop Digital Decoration on USB</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">1080p HD Video Files in .MP4 Format. Horizontal and Vertical Orientations Included. Transform your window into Santa's workshop instantly. A top "chistmas" decoration choice.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(30k+ bought)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Bluey Advent Calendar Pack</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">24 Days of Surprises! Bluey advent calendar 2025 includes accessories, stickers & a mini Christmas tree.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$24.99</span>
+                  <a href="https://amzn.to/4pvkLCI" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$39.99</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI why this is viral</button>
+             </div>
+             <!-- Hidden Long Description for Modal -->
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">The Ultimate Bluey Holiday Experience</h3>
+               <p class="mb-4">Make the 2025 holiday season unforgettable with the <strong>Bluey Advent Calendar Pack</strong>. This isn't just a toy; it's a daily ritual of joy for your little ones. Designed specifically for fans of the hit show, this calendar allows kids to reveal a new surprise every day leading up to Christmas.</p>
+               <h4 class="font-bold mb-2">Why It's a Top "Chistmas" Buy:</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>Exclusive Figures:</strong> Contains Bluey and Bingo in festive holiday jumpers that you cannot buy separately.</li>
+                 <li><strong>Interactive Play:</strong> Comes with a mini Christmas tree that kids can decorate with the included accessories.</li>
+                 <li><strong>Screen-Free Fun:</strong> Encourages imaginative play and storytelling, keeping kids off tablets during the busy holiday season.</li>
+                 <li><strong>High Quality:</strong> Durable plastic figures compatible with other Bluey playsets.</li>
+               </ul>
+               <p class="mb-4">Don't wait until December! This item historically sells out by mid-November. Secure your <strong>Bluey Advent Calendar</strong> today and guarantee smiles all month long. Perfect for boys and girls ages 3-8.</p>
              </div>
            </article>
 
-           <!-- Product 2 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Chistmas Holiday Hairstyle Kit" data-tags="hair, beauty, holiday style, girls">
+           <!-- Product 2: Gemstone -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="NATIONAL GEOGRAPHIC Gemstone Advent Calendar" data-tags="gemstone, stem, science kit, advent calendar, rocks">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/hair/500/500" alt="Chistmas Holiday Hairstyle Kit" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#2 Ranked</div>
-               <div class="absolute top-2 right-2 bg-christmas-green text-white text-xs font-bold px-2 py-1 rounded shadow">Best Deal</div>
+               <img src="images/gemstone_advent.jpg" alt="NATIONAL GEOGRAPHIC Gemstone Advent Calendar" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 STEM Toy</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(890 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Chistmas Holiday Hairstyle Kit</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Create the perfect Chistmas / Holiday Hairstyles! Includes ribbons for braided hairstyles, glitter, and easy guides for girls. As seen on Chikas Chic.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(30k+ bought)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Nat Geo Gemstone Calendar</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">2025 Gemstone advent calendar with 24 real gems to open each day. Complete rock collection with mini dig kit.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <div><span class="text-2xl font-bold text-christmas-red">$20.49</span> <span class="text-xs text-gray-400 line-through">$29.99</span></div>
+                  <a href="https://amzn.to/4okhR2L" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$15.49</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI about gems</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">Spark a Love for Science This Christmas</h3>
+               <p class="mb-4">The <strong>National Geographic Gemstone Advent Calendar</strong> is the perfect alternative to chocolate calendars. Each day reveals a genuine gemstone, rock, or mineral, turning the holiday countdown into an educational adventure. By Christmas Day, your child will have a complete rock collection!</p>
+               <h4 class="font-bold mb-2">What's Inside the Box?</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>24 Real Specimens:</strong> Includes Agate, Tiger's Eye, Jasper, Quartz, and more.</li>
+                 <li><strong>Dig Kit Element:</strong> The final day includes a mini dig brick to excavate a special specimen like a real paleontologist.</li>
+                 <li><strong>Identification Guide:</strong> Comes with a full-color learning guide to identify every rock.</li>
+                 <li><strong>Collector's Pouch:</strong> A bag to keep their new treasures safe.</li>
+               </ul>
+               <p class="mb-4">This is the <strong>best STEM gift for 2025</strong>. It provides hands-on learning and excitement. Perfect for boys and girls fascinated by geology or the outdoors.</p>
              </div>
            </article>
 
-           <!-- Product 3 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Select Comfort Holiday Tee (Pink/Navy)" data-tags="apparel, t-shirt, clothing, family">
+           <!-- Product 3: Magic -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="NATIONAL GEOGRAPHIC Magic Advent Calendar" data-tags="magic tricks, science experiments, advent calendar, kids activity">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/tee/500/500" alt="Select Comfort Holiday Tee" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#4 Ranked</div>
-               <div class="absolute top-2 right-2 bg-christmas-green text-white text-xs font-bold px-2 py-1 rounded shadow">Best Deal</div>
+               <img src="images/magic_advent.jpg" alt="NATIONAL GEOGRAPHIC Magic Advent Calendar 2025" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 right-2 bg-christmas-red text-white text-xs font-bold px-2 py-1 rounded shadow">-48% OFF</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(3500 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Select Comfort Holiday Tee (Pink/Navy)</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Available in Select Pink, Select Navy, Light Steel, and White. High quality cotton perfect for Christmas morning photos.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(10k+ bought)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Nat Geo Magic Advent Calendar</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">24 Days of Magic Tricks & Science Experiments. A unique holiday countdown that combines learning with fun.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <div><span class="text-2xl font-bold text-christmas-red">$16.49</span> <span class="text-xs text-gray-400 line-through">$31.99</span></div>
+                  <a href="https://amzn.to/3XXE3VE" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$22.00</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI difficulty</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">Magic Meets Science for Christmas</h3>
+               <p class="mb-4">Why choose between magic and science? The <strong>National Geographic Magic Advent Calendar</strong> gives you both! This kit is designed to build confidence and performance skills in children while teaching them the scientific principles behind the illusions.</p>
+               <h4 class="font-bold mb-2">Key Features:</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>24 Unique Tricks:</strong> From disappearing coins to card tricks and optical illusions.</li>
+                 <li><strong>Video Instructions:</strong> Access to online video tutorials makes learning the tricks easy for kids.</li>
+                 <li><strong>Performance Ready:</strong> Includes a wand and other props so they can put on a show for the family on Christmas Eve.</li>
+               </ul>
+               <p class="mb-4">At nearly 50% off, this is a <strong>steal for Black Friday</strong> and holiday shopping. It's an engaging, interactive gift that keeps giving all month long.</p>
              </div>
            </article>
 
-           <!-- Product 4 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="4K Smart LED Christmas Tree Lights" data-tags="lights, smart home, tree, decoration">
+           <!-- Product 4: Candles -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="GenSwin Flameless Ivory Taper Candles" data-tags="candles, flameless, led, home decor, wedding">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/lights/500/500" alt="4K Smart LED Christmas Tree Lights" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#3 Ranked</div>
+               <img src="images/taper_candles.jpg" alt="GenSwin Flameless Ivory Taper Candles" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 Decor</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★☆☆ <span class="text-xs text-gray-400 ml-1">(5600 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">4K Smart LED Christmas Tree Lights</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">App-controlled smart lights. Map your tree in 3D and create stunning light shows. Works with Alexa and Google Home.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(14k+ bought)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">GenSwin Flameless Taper Candles</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">Pack of 6 Battery Operated LED Warm 3D Wick Light Window Candles. Real wax look with 10-key remote. Safe for kids and pets.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$29.74</span>
+                  <a href="https://amzn.to/3XXE3VE" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$89.99</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI battery life</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">Elegant & Safe Holiday Lighting</h3>
+               <p class="mb-4">Transform your home into a cozy winter wonderland without the fire hazard. The <strong>GenSwin Flameless Taper Candles</strong> offer the flickering ambiance of real candles with none of the mess or danger.</p>
+               <h4 class="font-bold mb-2">Why Buy These?</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>Realistic 3D Wick:</strong> The LED flame flickers gently, mimicking real fire.</li>
+                 <li><strong>Remote Controlled:</strong> Set timers (2/4/6/8 hours) so they turn on automatically every evening as the sun sets.</li>
+                 <li><strong>Real Wax Coating:</strong> They look and feel like premium candles, not cheap plastic.</li>
+                 <li><strong>Kid & Pet Safe:</strong> No open flame means you can place them on low tables, near curtains, or on the Christmas tree.</li>
+               </ul>
+               <p class="mb-4">Perfect for holiday dinner tables, window displays, or mantels. A top-rated "chistmas" decor item for 2025.</p>
              </div>
            </article>
 
-           <!-- Product 5 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Premium Artificial Spruce Tree (7.5ft)" data-tags="tree, artificial tree, home decor">
+           <!-- Product 5: Crayola -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Crayola Inspiration Art Case Space Coloring Set" data-tags="crayola, art kit, drawing, kids gift, amazon exclusive">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/tree/500/500" alt="Premium Artificial Spruce Tree" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#5 Ranked</div>
+               <img src="images/crayola_art_case.jpg" alt="Crayola Inspiration Art Case" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">Top Gift</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(8900 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Premium Artificial Spruce Tree (7.5ft)</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">Feel Real branch tip technology for remarkable realism. Pre-lit with 750 white lights. Easy assembly for a hassle-free chistmas.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(47k reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Crayola Art Case (140pcs)</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">Complete art kit for kids featuring crayons, markers, and pencils in a space-themed case. Amazon Exclusive.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <div><span class="text-2xl font-bold text-christmas-red">$20.49</span> <span class="text-xs text-gray-400 line-through">$28.32</span></div>
+                  <a href="https://amzn.to/4p7AGaL" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$199.99</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI best age</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">Unleash Creativity This Holiday</h3>
+               <p class="mb-4">The <strong>Crayola Inspiration Art Case</strong> is a mobile studio for your budding artist. With over 140 pieces, it has everything a child needs to create masterpieces during the holiday break.</p>
+               <h4 class="font-bold mb-2">Detailed Contents:</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li>64 Crayons, 20 Short Pencils, 40 Washable Markers, and 15 sheets of paper.</li>
+                 <li><strong>Space Themed Case:</strong> The durable storage case features a cool space design, making it a great gift for boys and girls.</li>
+                 <li><strong>Portable:</strong> Snap-fit slots keep everything organized so they can take it to Grandma's house.</li>
+               </ul>
+               <p class="mb-4">Rated 5 stars by over 47,000 parents. This is a safe, non-toxic, and incredibly valuable gift that lasts long after the Christmas tree is taken down.</p>
              </div>
            </article>
 
-           <!-- Product 6 -->
-           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="Gourmet Holiday Gift Basket" data-tags="food, gift basket, chocolate">
+           <!-- Product 6: Moon Lamp -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="BRIGHTWORLD Moon Lamp Galaxy Lamp" data-tags="moon lamp, night light, galaxy, led, room decor">
              <div class="relative aspect-square overflow-hidden bg-gray-100">
-               <img src="https://picsum.photos/seed/basket/500/500" alt="Gourmet Holiday Gift Basket" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#8 Ranked</div>
+               <img src="images/moon_lamp.jpg" alt="BRIGHTWORLD Moon Lamp" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">#1 Night Light</div>
              </div>
              <div class="p-5 flex-1 flex flex-col">
-                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★★ <span class="text-xs text-gray-400 ml-1">(450 reviews)</span></div>
-                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Gourmet Holiday Gift Basket</h2>
-                <div class="flex-1 product-desc-container">
-                    <p class="text-gray-600 text-sm line-clamp-3 product-static-desc">A selection of fine chocolates, cheeses, and crackers. The perfect last-minute gift that looks thoughtful and expensive.</p>
-                    <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in"></div>
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(31k+ reviews)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Galaxy Moon Lamp (3D)</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">5.9 inch 16 Colors LED 3D Moon Light. Remote & Touch Control. The perfect cool gift for kids and women.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <span class="text-2xl font-bold text-christmas-red">$31.51</span>
+                  <a href="https://amzn.to/3XkWWSl" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
                 </div>
-                <div class="mt-4 flex items-center justify-between">
-                  <span class="text-2xl font-bold text-christmas-red">$49.95</span>
-                  <button class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy on Amazon</button>
-                </div>
-                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
-                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Ask AI why this is great
-                </button>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI brightness</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">A Gift Out of This World</h3>
+               <p class="mb-4">The <strong>BRIGHTWORLD Moon Lamp</strong> isn't just a light; it's a piece of art. Using 3D printing technology based on NASA data, the surface replicates the moon's topography.</p>
+               <h4 class="font-bold mb-2">Why It's Trending:</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>16 Color Modes:</strong> From calming warm white to vibrant galaxy purples and blues.</li>
+                 <li><strong>Dual Control:</strong> Change settings via the included remote or by simply touching the lamp.</li>
+                 <li><strong>Rechargeable:</strong> No messy cords. Charge it up and place it anywhere—bedside table, bookshelf, or desk.</li>
+               </ul>
+               <p class="mb-4">This makes for a stunning visual impact as a Christmas gift. Ideal for teenagers who are hard to buy for, or as a soothing nightlight for younger children.</p>
              </div>
            </article>
-           
+
+           <!-- Product 7: Dino -->
+           <article class="product-item bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 group" data-title="NATIONAL GEOGRAPHIC 2025 Dinosaur Advent Calendar" data-tags="dinosaur, advent calendar, dino figures, kids toy">
+             <div class="relative aspect-square overflow-hidden bg-gray-100">
+               <img src="images/dinosaur_advent.jpg" alt="Dinosaur Advent Calendar" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+               <div class="absolute top-2 left-2 bg-christmas-gold text-white text-xs font-bold px-2 py-1 rounded shadow">New Release</div>
+             </div>
+             <div class="p-5 flex-1 flex flex-col">
+                <div class="mb-2 flex items-center space-x-1 text-christmas-gold">★★★★☆ <span class="text-xs text-gray-400 ml-1">(7k+ bought)</span></div>
+                <h2 class="text-lg font-serif font-bold text-gray-900 mb-2 leading-tight">Dinosaur Advent Calendar</h2>
+                <p class="text-gray-600 text-sm line-clamp-3 mb-4">Ultimate Dinosaur Countdown Calendar with 24 Dino Activities & Figures. Create a clay T. Rex, excavate a dino tooth replica & more.</p>
+                <button class="view-details-btn text-christmas-red font-bold text-sm underline mb-4 text-left hover:text-christmas-green">Read Full Review & Details</button>
+                <div class="ai-response-box hidden bg-purple-50 p-3 rounded-lg border border-purple-100 mt-2 animate-fade-in mb-4"></div>
+                <div class="mt-auto flex items-center justify-between">
+                  <div><span class="text-2xl font-bold text-christmas-red">$17.99</span> <span class="text-xs text-gray-400 line-through">$24.99</span></div>
+                  <a href="https://amzn.to/4p5r93L" rel="nofollow noopener noreferrer" target="_blank" class="bg-christmas-dark text-white hover:bg-christmas-red transition-colors px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-gray-200">Buy Now</a>
+                </div>
+                <button class="ai-ask-btn mt-2 w-full text-xs text-purple-600 hover:text-purple-800 font-medium flex items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity"><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> Ask AI dino facts</button>
+             </div>
+             <div class="hidden long-description-content">
+               <h3 class="text-2xl font-serif font-bold mb-4">A Prehistoric Holiday Adventure</h3>
+               <p class="mb-4">For the dino-obsessed kid, nothing beats the <strong>National Geographic Dinosaur Advent Calendar</strong>. This is a comprehensive activity kit packed into 24 days of discovery.</p>
+               <h4 class="font-bold mb-2">Activities Included:</h4>
+               <ul class="list-disc pl-5 mb-4 space-y-2">
+                 <li><strong>Figurines:</strong> High-quality dinosaur figures to play with.</li>
+                 <li><strong>Excavation:</strong> Dig out a replica T. Rex tooth and other fossils.</li>
+                 <li><strong>Clay Modeling:</strong> Use the included clay to sculpt your own dinosaur.</li>
+               </ul>
+               <p class="mb-4">This calendar offers exceptional value by combining multiple play patterns—collecting, digging, and creating. It's an immersive experience that keeps kids engaged throughout December.</p>
+             </div>
+           </article>
          </div>
          
          <div id="noResults" class="hidden text-center py-20">
-            <p class="text-gray-500 text-lg">No "chistmas" products found matching your search.</p>
+            <p class="text-gray-500 text-lg">No products found matching your search.</p>
             <button id="resetSearchBtn" class="mt-4 text-christmas-red hover:underline">View all top products</button>
          </div>
       </section>
-
+      
       <!-- Blog Section -->
       <section id="blog" class="py-16 bg-christmas-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">
-              Holiday Guides & "Chistmas" Hacks
-            </h2>
-            <p class="max-w-2xl mx-auto text-gray-600">
-              Expert advice on how to make your holiday season magical, tailored for smart shoppers who hate wasting time.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-              <img src="https://picsum.photos/seed/blog1/800/600" alt="Why Everyone is Googling 'Chistmas' This Year" class="w-full h-48 object-cover">
-              <div class="p-6">
-                <div class="flex items-center text-xs text-gray-500 mb-2">
-                  <span>Oct 12, 2025</span>
-                  <span class="mx-2">•</span>
-                  <span class="text-christmas-red font-medium">Buying Guide</span>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">Why Everyone is Googling "Chistmas" This Year</h3>
-                <p class="text-gray-600 mb-4 text-sm">We analyze the trend of the missing "r" and why smart shoppers are finding better deals by looking for common misspellings.</p>
-                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
-              </div>
-            </article>
-
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-              <img src="https://picsum.photos/seed/blog2/800/600" alt="Top 5 Digital Decorations for 2025" class="w-full h-48 object-cover">
-              <div class="p-6">
-                <div class="flex items-center text-xs text-gray-500 mb-2">
-                  <span>Nov 01, 2025</span>
-                  <span class="mx-2">•</span>
-                  <span class="text-christmas-red font-medium">Buying Guide</span>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">Top 5 Digital Decorations for 2025</h3>
-                <p class="text-gray-600 mb-4 text-sm">From Santa's Workshop to Winter Wonderlands, see which USB digital decorations are taking over the neighborhood windows.</p>
-                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
-              </div>
-            </article>
-
-            <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-              <img src="https://picsum.photos/seed/blog3/800/600" alt="The Ultimate Guide to Holiday Braids" class="w-full h-48 object-cover">
-              <div class="p-6">
-                <div class="flex items-center text-xs text-gray-500 mb-2">
-                  <span>Nov 15, 2025</span>
-                  <span class="mx-2">•</span>
-                  <span class="text-christmas-red font-medium">Beauty</span>
-                </div>
-                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">The Ultimate Guide to Holiday Braids</h3>
-                <p class="text-gray-600 mb-4 text-sm">Based on the popular "Chikas Chic" tutorials, we break down the easiest festive hairstyles for the holiday party season.</p>
-                <a href="#" class="inline-flex items-center text-christmas-red hover:text-christmas-dark font-medium text-sm">Read Article</a>
-              </div>
-            </article>
-          </div>
+            <div class="text-center mb-12"><h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Holiday Guides</h2></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <img src="images/bluey_advent.jpg" alt="Bluey Guide" class="w-full h-48 object-contain bg-gray-50 p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">Why Bluey is #1</h3>
+                        <p class="text-gray-600 mb-4 text-sm">The Bluey Advent Calendar is selling out everywhere. Here is why you need to grab it now.</p>
+                        <a href="https://amzn.to/4pvkLCI" class="text-christmas-red font-bold hover:underline">Check Availability</a>
+                    </div>
+                </article>
+            </div>
         </div>
       </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-christmas-dark text-white py-12" id="about">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-         <div>
-           <h4 class="text-lg font-serif font-bold mb-4">Chistmas.store</h4>
-           <p class="text-gray-400 text-sm">
-             The number one destination for finding top-ranked Amazon products without the hassle. 
-             Optimized for the busy shopper.
-           </p>
-         </div>
-         <div>
-           <h4 class="text-lg font-serif font-bold mb-4">Quick Links</h4>
-           <ul class="space-y-2 text-sm text-gray-400">
-             <li><a href="#" class="hover:text-christmas-gold">Top 100 Gifts</a></li>
-             <li><a href="#" class="hover:text-christmas-gold">Digital Decorations</a></li>
-             <li><a href="#" class="hover:text-christmas-gold">Holiday Hairstyles</a></li>
-             <li><a href="#" class="hover:text-christmas-gold">Contact Us</a></li>
-           </ul>
-         </div>
-         <div>
-           <h4 class="text-lg font-serif font-bold mb-4">SEO Tags</h4>
-           <div class="flex flex-wrap gap-2">
-               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#chistmas</span>
-               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#christmas buy</span>
-               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#santa workshop</span>
-               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#christmas gift</span>
-               <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">#gift ideas</span>
-           </div>
-         </div>
-      </div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-        © 2025 Chistmas.store. All rights reserved. Not affiliated with Amazon.
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl relative flex flex-col animate-fade-in">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 id="modalTitle" class="text-2xl font-serif font-bold text-gray-900">Product Details</h3>
+                <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-200">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div id="modalBody" class="p-8 overflow-y-auto modal-content text-gray-700 leading-relaxed text-lg">
+                <!-- Dynamic Content -->
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-6 border-t border-gray-100 bg-gray-50 flex justify-end gap-4">
+                <button id="closeModalFooter" class="px-6 py-2 text-gray-600 font-medium hover:text-gray-900">Close</button>
+                <a id="modalBuyLink" href="#" target="_blank" class="px-8 py-2 bg-christmas-red text-white font-bold rounded-lg shadow hover:bg-red-700 transition-colors">Buy on Amazon</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-christmas-dark text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+        © 2025 Chistmas.store. Amazon Affiliate Disclosure: We earn from qualifying purchases.
       </div>
     </footer>
 
-    <!-- App Logic -->
     <script type="module">
         import { GoogleGenAI } from "@google/genai";
-
-        // --- Configuration ---
-        // Using environment variable as required by instruction. 
-        // Note: In a pure static file, this usually requires a build step/bundler to replace process.env.
-        // If served raw without build, this line needs a hardcoded key or a mechanism to inject it.
-        const apiKey = process.env.API_KEY || ''; 
-        const ai = new GoogleGenAI({ apiKey });
-
-        // --- State ---
+        // Removed process.env to prevent ReferenceError in browser
+        const apiKey = ''; // Insert API key here if needed for AI features
+        let ai;
+        try {
+            ai = new GoogleGenAI({ apiKey });
+        } catch (e) {
+            console.log("AI not initialized (no key)");
+        }
         let aiMode = false;
 
-        // --- Elements ---
+        // Modal Logic
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const modalBuyLink = document.getElementById('modalBuyLink');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const closeModalFooter = document.getElementById('closeModalFooter');
+
+        function openModal(title, contentHtml, buyLink) {
+            modalTitle.textContent = title;
+            modalBody.innerHTML = contentHtml;
+            modalBuyLink.href = buyLink;
+            modalBackdrop.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function closeModal() {
+            modalBackdrop.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        [closeModalBtn, closeModalFooter, modalBackdrop].forEach(el => {
+            el.addEventListener('click', (e) => {
+                if (e.target === el) closeModal();
+            });
+        });
+
+        // Event Delegation for "View Details" buttons
+        document.getElementById('productGrid').addEventListener('click', (e) => {
+            if (e.target.classList.contains('view-details-btn')) {
+                const productCard = e.target.closest('.product-item');
+                const title = productCard.getAttribute('data-title');
+                const longDesc = productCard.querySelector('.long-description-content').innerHTML;
+                const buyLink = productCard.querySelector('a').href;
+                openModal(title, longDesc, buyLink);
+            }
+        });
+
+        // AI & Search Logic
         const searchInput = document.getElementById('searchInput');
         const productItems = document.querySelectorAll('.product-item');
         const noResults = document.getElementById('noResults');
-        const currentSearchTerm = document.getElementById('currentSearchTerm');
-        const resetSearchBtn = document.getElementById('resetSearchBtn');
         const aiToggleBtn = document.getElementById('aiToggleBtn');
-        const searchIcon = document.getElementById('searchIcon');
         const heroAiText = document.getElementById('heroAiText');
 
-        // --- Search Logic ---
         function performSearch(term) {
             term = term.toLowerCase();
             let count = 0;
@@ -451,133 +510,58 @@
                     item.classList.add('hidden');
                 }
             });
-
-            if (count === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-            }
-
-            if (term) {
-                currentSearchTerm.innerText = `"${term}"`;
-            } else {
-                currentSearchTerm.innerText = '"chistmas best buys"';
-            }
+            noResults.classList.toggle('hidden', count > 0);
         }
 
         searchInput.addEventListener('input', (e) => performSearch(e.target.value));
-        resetSearchBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            performSearch('');
-        });
 
-        // --- AI Mode Logic ---
         aiToggleBtn.addEventListener('click', () => {
             aiMode = !aiMode;
-            
-            // Toggle UI styles
             if (aiMode) {
-                aiToggleBtn.classList.remove('bg-gray-100', 'text-gray-600');
-                aiToggleBtn.classList.add('bg-purple-100', 'text-purple-700');
-                aiToggleBtn.setAttribute('aria-pressed', 'true');
-                
-                searchInput.classList.remove('focus:ring-blue-200', 'focus:border-blue-500');
-                searchInput.classList.add('border-purple-300', 'focus:border-purple-500', 'focus:ring-purple-200');
-                searchInput.placeholder = "Ask AI for the best Christmas gift...";
-                
-                searchIcon.classList.remove('text-gray-400');
-                searchIcon.classList.add('text-purple-600');
-                
+                aiToggleBtn.classList.replace('bg-gray-100', 'bg-purple-100');
+                aiToggleBtn.classList.replace('text-gray-600', 'text-purple-700');
                 heroAiText.classList.remove('hidden');
-                
-                // Auto trigger AI on visible items
+                searchInput.placeholder = "Ask AI for the best Christmas gift...";
                 productItems.forEach(item => {
-                    if (!item.classList.contains('hidden')) {
-                        const btn = item.querySelector('.ai-ask-btn');
-                        const responseBox = item.querySelector('.ai-response-box');
-                        if (responseBox.innerText === '') {
-                             triggerAiInsight(item);
-                        }
-                    }
+                     if (!item.classList.contains('hidden') && item.querySelector('.ai-response-box').innerText === '') {
+                          triggerAiInsight(item);
+                     }
                 });
-
             } else {
-                aiToggleBtn.classList.remove('bg-purple-100', 'text-purple-700');
-                aiToggleBtn.classList.add('bg-gray-100', 'text-gray-600');
-                aiToggleBtn.setAttribute('aria-pressed', 'false');
-                
-                searchInput.classList.add('focus:ring-blue-200', 'focus:border-blue-500');
-                searchInput.classList.remove('border-purple-300', 'focus:border-purple-500', 'focus:ring-purple-200');
-                searchInput.placeholder = "Search chistmas products...";
-                
-                searchIcon.classList.add('text-gray-400');
-                searchIcon.classList.remove('text-purple-600');
-                
+                aiToggleBtn.classList.replace('bg-purple-100', 'bg-gray-100');
+                aiToggleBtn.classList.replace('text-purple-700', 'text-gray-600');
                 heroAiText.classList.add('hidden');
+                searchInput.placeholder = "Search chistmas products...";
             }
         });
 
-        // --- Gemini API Logic ---
         async function triggerAiInsight(productElement) {
             const title = productElement.getAttribute('data-title');
             const tags = productElement.getAttribute('data-tags');
             const responseBox = productElement.querySelector('.ai-response-box');
-            const staticDesc = productElement.querySelector('.product-static-desc');
-            const askBtn = productElement.querySelector('.ai-ask-btn');
-
-            // Hide static desc and show loader
-            staticDesc.classList.add('hidden');
-            responseBox.classList.remove('hidden');
-            askBtn.classList.add('hidden'); // Hide button while loading or done
             
-            responseBox.innerHTML = `
-                <div class="flex items-center gap-1 mb-1">
-                    <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
-                    <span class="text-[10px] font-bold text-purple-700 uppercase">AI Insight</span>
-                </div>
-                <div class="space-y-1 animate-pulse">
-                   <div class="h-2 bg-purple-200 rounded w-full"></div>
-                   <div class="h-2 bg-purple-200 rounded w-2/3"></div>
-                 </div>
-            `;
+            responseBox.classList.remove('hidden');
+            responseBox.innerHTML = '<p class="text-xs text-purple-500 animate-pulse">AI thinking...</p>';
 
             if (!apiKey) {
-                responseBox.innerHTML += `<p class="text-xs text-red-500 mt-2">API Key missing. Cannot generate insight.</p>`;
+                responseBox.innerHTML = '<p class="text-xs text-red-500">No API Key</p>';
                 return;
             }
 
             try {
                 const response = await ai.models.generateContent({
                   model: 'gemini-2.5-flash',
-                  contents: `Write a persuasive, SEO-optimized short paragraph (max 40 words) explaining why "${title}" (tags: ${tags}) is a must-have item for Christmas 2025. Focus on the value proposition.`,
+                  contents: `Write a persuasive 30-word summary why "${title}" is a viral 2025 holiday gift.`,
                 });
-                
-                const text = response.text || "Discover the magic of this product.";
-                
-                responseBox.innerHTML = `
-                    <div class="flex items-center gap-1 mb-1">
-                        <svg class="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
-                        <span class="text-[10px] font-bold text-purple-700 uppercase">AI Insight</span>
-                    </div>
-                    <p class="text-sm text-purple-900 leading-snug">${text}</p>
-                `;
-
+                responseBox.innerHTML = `<p class="text-sm text-purple-900 leading-snug"><strong>AI Insight:</strong> ${response.text}</p>`;
             } catch (error) {
-                console.error(error);
-                responseBox.innerHTML = `<p class="text-sm text-gray-500">Could not load AI insight.</p>`;
-                staticDesc.classList.remove('hidden'); // Revert
-                responseBox.classList.add('hidden');
+                responseBox.innerHTML = '<p class="text-xs text-gray-500">AI unavailable</p>';
             }
         }
 
-        // Add listeners to all "Ask AI" buttons
         document.querySelectorAll('.ai-ask-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const productEl = e.target.closest('.product-item');
-                triggerAiInsight(productEl);
-            });
+            btn.addEventListener('click', (e) => triggerAiInsight(e.target.closest('.product-item')));
         });
-
     </script>
   </body>
 </html>
